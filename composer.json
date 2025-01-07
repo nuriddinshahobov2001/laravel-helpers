@@ -1,0 +1,28 @@
+{
+    "name": "zintel/laravel-helpers",
+    "description": "This package will help you",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nuriddin Shahobov Farrukhovich",
+            "email": "nuriddinshahobov9@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zintel\\LaravelHelpers\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.1|^8.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zintel\\LaravelHelpers\\LaravelHelpersServiceProvider"
+            ]
+        }
+    },
+    "version": "1.0.12",
+    "minimum-stability": "stable"
+}
