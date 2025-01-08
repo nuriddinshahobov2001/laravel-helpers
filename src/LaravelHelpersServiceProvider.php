@@ -4,29 +4,27 @@ namespace Zintel\LaravelHelpers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Zintel\LaravelHelpers\Helpers\Zintel;
+use Zintel\LaravelHelpers\Helpers\ZintelDate;
 
 class LaravelHelpersServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Регистрируем класс Zintel как сервис в контейнере
-        $this->app->singleton('zintel', function () {
-            return new Zintel();
+        $this->app->singleton('zintelDate', function () {
+            return new ZintelDate();
         });
 
-        // Регистрируем макросы для строк
-        Str::macro('toLowerCase', function ($string) {
-            return (new \Illuminate\Support\Stringable($string))->lower();
+        $this->app->singleton('zintelString', function () {
+            return new ZintelDate();
         });
 
-        Str::macro('toUpperCase', function ($string) {
-            return (new \Illuminate\Support\Stringable($string))->upper();
+        $this->app->singleton('zintelArray', function () {
+            return new ZintelDate();
         });
     }
 
     public function boot()
     {
-        // Логика загрузки пакета, если нужно
+        // TODO
     }
 }
